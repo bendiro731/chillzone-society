@@ -156,7 +156,7 @@
           </div>
 
           <div style="margin-top:18px;display:flex;gap:10px;align-items:center">
-            <a class="cta" href="#join">Join the Group</a>
+            <a class="cta" href="https://chat.whatsapp.com/HaXPO96rz4x9L4mCCkYDZm">Join the Group</a>
             <a href="#rules" style="padding:8px 12px;background:transparent;border-radius:10px;border:1px dashed rgba(255,255,255,0.05);font-weight:700">See Rules</a>
           </div>
 
@@ -382,11 +382,12 @@
     });
 
     // Join button opens WhatsApp invite — replace with your real invite link
-    joinBtn.addEventListener('click',(e)=>{
-      e.preventDefault();
-      const invite = prompt('Paste your WhatsApp invite link here (or leave default demo)\nUse format: https://chat.whatsapp.com/YOUR_CODE', 'https://chat.whatsapp.com/HaXPO96rz4x9L4mCCkYDZm');
-      if(!invite) return;
-      window.open(invite,'_blank');
+   joinBtn.addEventListener('click',(e)=>{
+  e.preventDefault();
+  const invite = 'https://chat.whatsapp.com/HaXPO96rz4x9L4mCCkYDZm'; // replace with your real link
+  window.open(invite,'_blank');
+  });
+
     });
 
     // Reminder button (demo)
@@ -399,4 +400,5 @@
 
 </body>
 </html>
+
 
