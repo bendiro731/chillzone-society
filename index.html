@@ -86,7 +86,25 @@
     .light{
       --bg:#f7fbff;--card:#ffffff;--muted:#2012e4c5;--accent:#0ea5a4;--glass:rgba(227, 228, 233, 0.623);--glass-2:rgba(185, 190, 211, 0.815);color-scheme:light;color:#e06931a9
     }
-  
+  <style>
+  .game-box {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+  }
+
+  .game-box.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
   </style>
   <style>
     
@@ -145,7 +163,26 @@
       <section id="home" class="hero">
         <div class="hero-card">
           <h1>Welcome to ChillZone Society</h1>
-          <p class="lead">A friendly gaming community for Free Fire players — squads, tips, tournaments and chilled chats. Meet new friends and level up together. Get involved in a viowlence match and fun stuffs</p>
+          <p class="lead">This isn’t just a group — it’s a whole vibe! Whether you're here to laugh, gist, play games, or just enjoy good company, you’re in the right place.
+<p>
+💬 We talk, we vibe, we connect.  
+🔥 From fun chats to late-night games like Smash or Pass, Truth or Dare, Pick & Punish — boredom has no space here.
+</p><p>
+🎮 Gamers? You’re welcome.  
+🎭 Funny souls? Even better.  
+📸 Creators, meme lords, and good vibers — this is your space!
+</p><p>
+⚠️ Group Rules:  
+- Respect everyone.  
+- No hate speech, spam,links, or unnecessary drama.  
+- Be active, be fun, be real.  
+- If you be hacker and you wan find my trouble, no near here abeg. I no wan see you for this group unless you wan collect kick from me and no WhatsApp bot 😌.
+- You can be wild or savage — but don't insult  anyone’s parents or family.
+</p>
+💫 If you’re dry, you’ll dry alone 😌 so better talk or just watch the cruise sail by.
+<p>
+Let’s keep it active, fun, and real. You’re not just a member — you’re family now. 💖
+</p>
 
           <div class="features">
             <div class="chip">Free Fire Tournaments</div>
@@ -292,9 +329,19 @@
       </section>
 
       <section id="contact" class="card">
-        Tick the following for us to know your style of play😊<br>
-        <p>
-          <h3>Which rank are you now?</h3>
+        <h3>Which of the following games do you play?</h3>
+
+<input type="radio" name="service" value="Free Fire" onclick="showContent()"> Free Fire<br>
+<input type="radio" name="service" value="Call Of Duty Mobile" onclick="showContent()"> Call Of Duty Mobile<br>
+<input type="radio" name="service" value="BloodStrike" onclick="showContent()"> BloodStrike<br>
+<input type="radio" name="service" value="PUB G Mobile" onclick="showContent()"> PUBG Mobile<br>
+<input type="radio" name="service" value="Others" onclick="showContent()"> Others<br>
+
+<!-- CONTENT SECTIONS -->
+<div id="freefire" class="game-box">
+  <h2>🔥 Free Fire</h2>
+  <p>Welcome survivor! Get ready for battle.
+<h3>Which rank are you now?</h3>
         <input type="radio" name="Rank" value="Platinum">Platinum
         <input type="radio" name="Rank" value="Daimond">Daimond
         <input type="radio" name="Rank" value="Heroic">Heroic
@@ -324,10 +371,35 @@
           <input type="radio" name="Rank" value="Battle Royal">Battle Royal
           <input type="radio" name="Rank" value="Lone Wolf">Lone Wolf
           <input type="radio" name="Rank" value="Craft Land">Craft Land
+  </p>
+</div>
+
+<div id="cod" class="game-box">
+  <h2>🎯 Call Of Duty Mobile</h2>
+  <p>Lock and load, soldier!</p>
+</div>
+
+<div id="bloodstrike" class="game-box">
+  <h2>⚔️ BloodStrike</h2>
+  <p>Fast-paced action awaits you.</p>
+</div>
+
+<div id="pubg" class="game-box">
+  <h2>🪖 PUBG Mobile</h2>
+  <p>Winner winner chicken dinner!</p>
+</div>
+
+<div id="others" class="game-box">
+  <h2>🎮 Other Games</h2>
+  <p>You love exploring different games!</p>
+</div>
+
+        Tick the following for us to know your style of play😊<br>
+        <p>
+          
         </p>
         <p>
           <h3>Your Favorite Type Of Guns</h3>
-          <input type="checkbox" name="service" value="Pistols">Pistol (Desert Eagle)
           <input type="checkbox" name="service" value="Assault Rifle">Assault Rifle
           <input type="checkbox" name="service" value="SMG">SMG
           <input type="checkbox" name="service" value="Marskman Rifle">Marskman Rifle
@@ -396,6 +468,52 @@
     });
 
     // Small helper to auto-close mobile nav if present (not implemented extensive nav here)
+  <script>
+function showContent() {
+  let games = document.getElementsByName("service");
+  let selectedGame = "";
+
+  for (let i = 0; i < games.length; i++) {
+    if (games[i].checked) {
+      selectedGame = games[i].value;
+      break;
+    }
+  }
+
+  // hide all sections
+  let boxes = document.getElementsByClassName("game-box");
+  for (let i = 0; i < boxes.length; i++) {
+    boxes[i].classList.remove("show");
+    boxes[i].style.display = "none";
+  }
+
+  // show selected section
+  if (selectedGame === "Free Fire") {
+    showBox("freefire");
+  } 
+  else if (selectedGame === "Call Of Duty Mobile") {
+    showBox("cod");
+  } 
+  else if (selectedGame === "BloodStrike") {
+    showBox("bloodstrike");
+  } 
+  else if (selectedGame === "PUB G Mobile") {
+    showBox("pubg");
+  } 
+  else if (selectedGame === "Others") {
+    showBox("others");
+  }
+}
+
+function showBox(id) {
+  let box = document.getElementById(id);
+  box.style.display = "block";
+  setTimeout(() => {
+    box.classList.add("show");
+  }, 10);
+}
+</script>
+
   </script>
   
 <!-- Google tag (gtag.js) -->
@@ -411,6 +529,7 @@
 
 </body>
 </html>
+
 
 
 
