@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>ChillZone Society</title>
-  <meta name="description" content="ChillZone Society — gaming & friendly chats. Join our community!">
+  <meta name="description" content="ChillZone Society — gaming, Free Fire & friendly chats. Join our community!">
   <link rel="icon" href="data:;base64,iVBORw0KGgo=">
   
   <style>
@@ -135,12 +135,12 @@
         <div class="logo">CZ</div>
         <div>
           <div style="font-weight:800">🔥🎮👑ChillZone Society👑🎮🔥</div>
-          <div style="font-size:12px;color:var(--muted)">Gaming • Friendly Chats • Others</div>
+          <div style="font-size:12px;color:var(--muted)">Gaming • Free Fire • Friendly Chats</div>
         </div>
       </div>
        <section class="hero">
   <h1 class="cz-logo">🔥 ChillZone Society 🔥</h1>
-  <p class="cz-sub">Gaming • Friendship • Vibes</p>
+  <p class="cz-sub">Gaming • Free Fire • Friendship • Vibes</p>
 </section>
       <nav aria-label="Main navigation">
         <a href="#home">Home</a>
@@ -184,10 +184,11 @@ Let’s keep it active, fun, and real. You’re not just a member — you’re f
 </p>
 
           <div class="features">
-            <div class="chip">Tournaments</div>
-            <div class="chip"> Clan & Guild Recruitment</div>
+            <div class="chip">Free Fire Tournaments</div>
+            <div class="chip">Guild Recruitment</div>
             <div class="chip">Weekly Events</div>
             <div class="chip">Voice Lobbies</div>
+            <div class="chip">Lone Wolf & Craftland Games</div>
           </div>
 
           <div style="margin-top:18px;display:flex;gap:10px;align-items:center">
@@ -198,8 +199,8 @@ Let’s keep it active, fun, and real. You’re not just a member — you’re f
           <div style="margin-top:18px;display:flex;gap:12px;align-items:center">
             <div style="font-size:13px;color:var(--muted)">Upcoming:</div>
             <div style="background:var(--glass);padding:6px 10px;border-radius:10px">Battle Royal Tournament Hosted By group riches, lol(I no get money oo, not me) — Dec 28</div>
-            <div style="background:var(--glass);padding:6px 10px;border-radius:10px">New Guild & ClanLaunch</div>
-             <div style="background:var(--glass);padding:6px 10px;border-radius:10px">Group Clan & Guild Wars</div>
+            <div style="background:var(--glass);padding:6px 10px;border-radius:10px">New Guild Launch</div>
+             <div style="background:var(--glass);padding:6px 10px;border-radius:10px">Group Guild Wars</div>
           </div>
         </div>
 
@@ -310,10 +311,10 @@ Let’s keep it active, fun, and real. You’re not just a member — you’re f
         <h2>Admins</h2>
         <div class="members">
           <!-- Sample members, replace with real member data if you like -->
-          <div class="member"><div class="avatar">Ben</div><div><strong>Loner@Toppa</strong><div style="font-size:12px;color:var(--muted)">CoD M • Rank: Grand Master</div></div></div>
-          <div class="member"><div class="avatar">Bestie</div><div><strong>Sharon</strong><div style="font-size:12px;color:var(--muted)">Free Fire • Rank: Elite Master</div></div></div>
-          <div class="member"><div class="avatar">AMG</div><div><strong>AMG@Toppa</strong><div style="font-size:12px;color:var(--muted)">BloodStrike • Rank: Mythic</div></div></div>
-          <div class="member"><div class="avatar">Precy</div><div><strong>Preciuos</strong><div style="font-size:12px;color:var(--muted)">PUB G • Rank: Acer</div></div></div>
+          <div class="member"><div class="avatar">Ben</div><div><strong>Loner@Toppa</strong><div style="font-size:12px;color:var(--muted)">Leader • Rank: Grand Master</div></div></div>
+          <div class="member"><div class="avatar">Bestie</div><div><strong>Sharon</strong><div style="font-size:12px;color:var(--muted)">Influencer • Rank: Elite Master</div></div></div>
+          <div class="member"><div class="avatar">AMG</div><div><strong>AMG@Toppa</strong><div style="font-size:12px;color:var(--muted)">V Badge • Rank: Master</div></div></div>
+          <div class="member"><div class="avatar">Precy</div><div><strong>Preciuos</strong><div style="font-size:12px;color:var(--muted)">Streamer</div></div></div>
         </div>
       </section>
 
@@ -327,18 +328,22 @@ Let’s keep it active, fun, and real. You’re not just a member — you’re f
       </section>
 
       <section id="contact" class="card">
+   
+
         <h3>Which of the following games do you play?</h3>
 
-<input type="radio" name="service" value="Free Fire" onclick="showContent()"> Free Fire<br>
+<input type="radio" name="service" value="Free Fire" onclick="showContent()" > Free Fire<br>
 <input type="radio" name="service" value="Call Of Duty Mobile" onclick="showContent()"> Call Of Duty Mobile<br>
 <input type="radio" name="service" value="BloodStrike" onclick="showContent()"> BloodStrike<br>
 <input type="radio" name="service" value="PUB G Mobile" onclick="showContent()"> PUBG Mobile<br>
 <input type="radio" name="service" value="Others" onclick="showContent()"> Others<br>
 
+
+
 <!-- CONTENT SECTIONS -->
 <div id="freefire" class="game-box">
   <h2>🔥 Free Fire</h2>
-  <p>Welcome survivor! Get ready for battle.
+  <p>Battle Royal, Battle In Style
 <h3>Which rank are you now?</h3>
         <input type="radio" name="Rank" value="Platinum">Platinum
         <input type="radio" name="Rank" value="Daimond">Daimond
@@ -369,13 +374,20 @@ Let’s keep it active, fun, and real. You’re not just a member — you’re f
           <input type="radio" name="Rank" value="Battle Royal">Battle Royal
           <input type="radio" name="Rank" value="Lone Wolf">Lone Wolf
           <input type="radio" name="Rank" value="Craft Land">Craft Land
+          <!-- Sound effect button -->
+<button onclick="playSound()">Ready</button>
+<audio id="clickSound" src="free fire.wav"></audio><br>
+<button onclick="showVideo('ff')"> Battle Royal</button>
+<video id="gameVideo" width="350" controls style="display:none;">
+  <source id="videoSource" src="" type="video/mp4">
+</video>
   </p>
 </div>
 
 <div id="cod" class="game-box">
   <h2>🎯 Call Of Duty Mobile</h2>
   <p>Lock and load, soldier!
- <h3>Which rank are you now?</h3>
+    <h3>Which rank are you now?</h3>
         <input type="radio" name="Rank" value="Sergent">Sergent
         <input type="radio" name="Rank" value="Lieutenant">Lieutenant
         <input type="radio" name="Rank" value="Captain">Captain
@@ -383,14 +395,20 @@ Let’s keep it active, fun, and real. You’re not just a member — you’re f
         <input type="radio" name="Rank" value="Colonel">Colonel
         <input type="radio" name="Rank" value="Brigadier"> Brigadier
         <input type="radio" name="Rank" value="Grand Master">Grand Master
-        <input type="radio" name="Rank" value="Legendary"> Legendary
- </p>
+        <input type="radio" name="Rank" value="Legendary"> Legendary <br>
+        <button onclick="showVideo('cod')"> Battle Royal</button>
+<video id="gameVideo" width="350" controls style="display:none;">
+  <source id="videoSource" src="" type="video/mp4">
+</video>
+
+
+  </p>
 </div>
 
 <div id="bloodstrike" class="game-box">
   <h2>⚔️ BloodStrike</h2>
   <p>Fast-paced action awaits you.
-  <h3>Which rank are you now?</h3>
+    <h3>Which rank are you now?</h3>
         <input type="radio" name="Rank" value="Bronze">Bronze
         <input type="radio" name="Rank" value="Silver">Silver
         <input type="radio" name="Rank" value="Gold">Gold
@@ -428,6 +446,11 @@ Let’s keep it active, fun, and real. You’re not just a member — you’re f
           <input type="radio" name="Hud" value="3 - Finger Hud">3 - Finger Hud
           <input type="radio" name="Hud" value="4 - Finger Hud">4 - Finger Hud
           <input type="radio" name="Hud" value="PC Player"> PC Player
+
+
+
+
+
         </p>
         <h2>Contact Us</h2>
         <p style="color:var(--muted)">Questions or suggestions? Send a message via WhatsApp ==> (+233) 53 782 2319.</p><p>OR</p><p style="color:var(--muted)">Through Our Email </p>
@@ -541,11 +564,38 @@ function showBox(id) {
     box.classList.add("show");
   }, 10);
 }
+ function playSound() {
+    document.getElementById("clickSound").play();
+  }
+
+
+  
+function showVideo(game) {
+  let video = document.getElementById("gameVideo");
+  let source = document.getElementById("videoSource");
+
+  if (game === "ff") {
+    source.src = "freefire.mp4"
+  } else if (game === "cod") {
+    source.src = "cod.mp4"
+  }
+
+  video.style.display = "block"
+  video.load();
+  video.play();
+}
+
+
 </script>
 
 
 
 </body>
 </html>
+
+
+
+
+
 
 
