@@ -123,6 +123,70 @@
       0 0 40px #ff1900,
       0 0 60px #02f727;
   }
+  form {
+    background: #082d71;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+  }
+
+  input, select, button {
+    width: 100%;
+    padding: 8px;
+    margin-top: 8px;
+    color: #00ff1a;
+  }
+
+  button {
+    background: #25D366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  button:disabled {
+    background: gray;
+    cursor: not-allowed;
+  }
+
+  /* Confirmation Animation */
+  .confirm-box {
+    display: none;
+    text-align: center;
+    margin-top: 30px;
+    animation: popIn 0.6s ease forwards;
+  }
+
+  .checkmark {
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    border-radius: 50%;
+    background: #4CAF50;
+    color: white;
+    font-size: 50px;
+    line-height: 80px;
+    animation: pulse 1.2s infinite;
+  }
+
+  @keyframes popIn {
+    from {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+    
    
 
 </style>
@@ -447,8 +511,41 @@ Let’s keep it active, fun, and real. You’re not just a member — you’re f
           <input type="radio" name="Hud" value="3 - Finger Hud">3 - Finger Hud
           <input type="radio" name="Hud" value="4 - Finger Hud">4 - Finger Hud
           <input type="radio" name="Hud" value="PC Player"> PC Player
+<p>
+          <h2>🎮 Game Registration</h2>
 
-          
+<form id="gameForm" onsubmit="sendToWhatsApp(); return false;">
+
+  <h3>Select your game</h3>
+  <label><input type="radio" name="game" value="Free Fire" required> Free Fire</label><br>
+  <label><input type="radio" name="game" value="COD Mobile"> COD Mobile</label><br>
+  <label><input type="radio" name="game" value="PUBG Mobile"> PUBG Mobile</label><br><br>
+
+  <h3>In-game Username</h3>
+  <input type="text" id="username" placeholder="Enter username" required>
+
+  <h3>Rank</h3>
+  <input type="text" id="rank" placeholder="e.g. Legendary" required>
+
+  <h3>Region</h3>
+  <select id="region" required>
+    <option value="">Select region</option>
+    <option value="Ghana">Ghana</option>
+    <option value="Nigeria">Nigeria</option>
+    <option value="Other">Other</option>
+  </select>
+
+  <br><br>
+  <button type="submit" id="submitBtn">Submit to WhatsApp</button>
+</form>
+
+<!-- Confirmation -->
+<div id="confirmBox" class="confirm-box">
+  <div class="checkmark">✓</div>
+  <h3>Submission Successful!</h3>
+  <p>Your details have been sent.</p>
+</div>
+
 
 
 
@@ -584,6 +681,33 @@ function showVideo(game) {
   video.style.display = "block"
   video.load();
   video.play();
+}
+function sendToWhatsApp() {
+  let game = document.querySelector('input[name="game"]:checked').value;
+  let username = document.getElementById("username").value;
+  let rank = document.getElementById("rank").value;
+  let region = document.getElementById("region").value;
+
+  let phoneNumber = "233537822319"; // 🔴 REPLACE with your WhatsApp number
+
+  let message =
+    "🎮 Game Registration%0A" +
+    "Game: " + game + "%0A" +
+    "Username: " + username + "%0A" +
+    "Rank: " + rank + "%0A" +
+    "Region: " + region;
+
+  window.open(
+    "https://wa.me/" + phoneNumber + "?text=" + message,
+    "_blank"
+  );
+
+  // Lock form
+  document.querySelectorAll("#gameForm input, #gameForm select, #submitBtn")
+    .forEach(el => el.disabled = true);
+
+  // Show confirmation animation
+  document.getElementById("confirmBox").style.display = "block";
 }
 
 
